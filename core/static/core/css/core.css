@@ -1,0 +1,170 @@
+/* Variables de Colores Tarkov */
+:root {
+    --tarkov-dark: #0d0d0d;
+    --tarkov-gray: #1a1a1a;
+    --tarkov-light-gray: #2d2d2d;
+    --tarkov-gold: #ffc107;
+    --tarkov-orange: #ff9800;
+    --tarkov-green: #4caf50;
+}
+
+/* Fuentes */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.brand-font {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--tarkov-gold);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Feature Boxes */
+.feature-box {
+    background: var(--tarkov-light-gray);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+}
+
+/* Stat Boxes */
+.stat-box {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+/* Cards */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Filter Buttons */
+.filter-btn {
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.filter-btn.active {
+    transform: scale(1.05);
+}
+
+/* Accordion */
+.accordion-button {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--tarkov-gold);
+    color: #000;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--tarkov-gold);
+}
+
+/* Footer */
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--tarkov-gold) !important;
+}
+
+/* Social Media Icons */
+.social-media a {
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--tarkov-gold) !important;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section img {
+        height: 50vh !important;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .feature-box, .stat-box {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+/* Estilos para imágenes de galería */
+.card-img-top {
+    height: 250px;
+    object-fit: contain !important;
+    object-position: center;
+    background-color: #1a1a1a;
+    padding: 10px;
+}

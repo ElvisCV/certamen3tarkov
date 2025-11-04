@@ -1,0 +1,176 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Arsenal de Armas - Tarkov Wiki{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'weapons/css/weapons.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Banner Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h1 class="brand-font display-4 mb-3 text-warning">
+            <i class="fas fa-gun me-3"></i>ARSENAL DE ARMAS
+        </h1>
+        <p class="lead">Catalogo completo de armas disponibles en Escape from Tarkov</p>
+        <p class="text-muted">Total de armas: {{ page_obj.paginator.count }}</p>
+    </div>
+</section>
+
+<!-- Filtros de Armas -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title brand-font text-warning mb-3">
+                    <i class="fas fa-filter me-2"></i>Filtros de Búsqueda
+                </h5>
+                <form method="get" action="{% url 'weapons:weapon_list' %}" class="row g-3">
+                    <div class="col-md-4">
+                        <label for="category" class="form-label">Categoría</label>
+                        <select name="category" id="category" class="form-select">
+                            <option value="">Todas las categorías</option>
+                            {% for category in categories %}
+                            <option value="{{ category.id }}" {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>
+                                {{ category.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="available" class="form-label">Disponibilidad</label>
+                        <select name="available" id="available" class="form-select">
+                            <option value="">Todas</option>
+                            <option value="true" {% if selected_available == 'true' %}selected{% endif %}>Disponibles</option>
+                            <option value="false" {% if selected_available == 'false' %}selected{% endif %}>No Disponibles</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="caliber" class="form-label">Calibre</label>
+                        <input type="text" name="caliber" id="caliber" class="form-control" 
+                               placeholder="Ej: 5.56x45mm" value="{{ selected_caliber }}">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-warning w-100">
+                            <i class="fas fa-search me-2"></i>Filtrar
+                        </button>
+                    </div>
+                    {% if selected_category or selected_available or selected_caliber %}
+                    <div class="col-12">
+                        <a href="{% url 'weapons:weapon_list' %}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-times me-2"></i>Limpiar Filtros
+                        </a>
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Listado de Armas -->
+<section class="py-5">
+    <div class="container">
+        {% if weapons %}
+        <div class="row g-4">
+            {% for weapon in weapons %}
+            <div class="col-lg-6 col-xl-4">
+                <div class="card weapon-card h-100 shadow-sm">
+                    <img src="{{ weapon.img }}" 
+                         class="card-img-top weapon-img" 
+                         alt="{{ weapon.name }}"
+                         onerror="this.src='https://images.unsplash.com/photo-1595590424283-b8f17842773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font text-warning">{{ weapon.name }}</h5>
+                        <p class="card-text">{{ weapon.description|truncatewords:20 }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fas fa-clock me-1"></i>
+                                Agregado: {{ weapon.created|date:"d/m/Y" }}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Paginacion -->
+        {% if page_obj.has_other_pages %}
+        <nav aria-label="Paginacion de armas" class="mt-5">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="Primera">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Anterior">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo;&laquo;</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo;</span>
+                </li>
+                {% endif %}
+                
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <li class="page-item active">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Siguiente">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Ultima">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">&raquo;</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link">&raquo;&raquo;</span>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        
+        <p class="text-center text-muted mt-3">
+            Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+            (Mostrando {{ weapons|length }} de {{ page_obj.paginator.count }} armas)
+        </p>
+        {% endif %}
+        
+        {% else %}
+        <div class="alert alert-info text-center">
+            <i class="fas fa-info-circle me-2"></i>
+            No hay armas registradas aun. Agrega armas desde el panel de administracion.
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'weapons/js/weapons.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Inicio - Tarkov Wiki{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section position-relative">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-12 position-relative">
+                <img src="https://www.escapefromtarkov.com/themes/eft-site/images/main_image.jpg" 
+                     class="img-fluid w-100" style="height: 70vh; object-fit: cover; filter: brightness(0.6);" alt="Escape from Tarkov">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" 
+                     style="background: rgba(0,0,0,0.5);">
+                    <div class="container text-white text-center">
+                        <h1 class="display-3 brand-font mb-4 text-warning">TARKOV WIKI</h1>
+                        <p class="lead mb-4 fs-3">Sobrevive. Saquea. Escapa.</p>
+                        <p class="mb-4">Tu guia completa para dominar Escape from Tarkov</p>
+                        <a href="{% url 'weapons:weapon_list' %}" class="btn btn-warning btn-lg me-2">
+                            <i class="fas fa-gun me-2"></i>Ver Arsenal
+                        </a>
+                        <a href="{% url 'core:about' %}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Sobre el Juego
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Caracteristicas del Juego -->
+<section class="py-5 bg-dark text-light">
+    <div class="container">
+        <h2 class="text-center brand-font mb-5 text-warning">CARACTERISTICAS PRINCIPALES</h2>
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-box p-4">
+                    <i class="fas fa-crosshairs fs-1 text-warning mb-3"></i>
+                    <h4 class="brand-font">Combate Tactico</h4>
+                    <p>Sistema de combate realista con balistica avanzada y fisica de armas detallada</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-box p-4">
+                    <i class="fas fa-box fs-1 text-warning mb-3"></i>
+                    <h4 class="brand-font">Sistema de Loot</h4>
+                    <p>Encuentra, intercambia y vende miles de objetos en un mercado dinamico</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="feature-box p-4">
+                    <i class="fas fa-map fs-1 text-warning mb-3"></i>
+                    <h4 class="brand-font">Mapas Detallados</h4>
+                    <p>Explora mapas extensos con multiples rutas de extraccion y puntos de interes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Estadisticas -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="stat-box">
+                    <h2 class="display-4 text-warning brand-font">{{ tarkov_stats.total_weapons }}</h2>
+                    <p class="lead">Armas Disponibles</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-box">
+                    <h2 class="display-4 text-warning brand-font">{{ tarkov_stats.total_categories }}</h2>
+                    <p class="lead">Categorías</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-box">
+                    <h2 class="display-4 text-warning brand-font">{{ tarkov_stats.total_modifications }}</h2>
+                    <p class="lead">Modificaciones</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-box">
+                    <h2 class="display-4 text-warning brand-font">{{ tarkov_stats.available_weapons }}</h2>
+                    <p class="lead">Armas Activas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-warning text-dark">
+    <div class="container text-center">
+        <h2 class="brand-font mb-4">Listo para Sobrevivir en Tarkov?</h2>
+        <p class="lead mb-4">Explora nuestro arsenal completo de armas y equipamiento</p>
+        <a href="{% url 'weapons:weapon_list' %}" class="btn btn-dark btn-lg">
+            <i class="fas fa-gun me-2"></i>Explorar Arsenal
+        </a>
+    </div>
+</section>
+{% endblock %}

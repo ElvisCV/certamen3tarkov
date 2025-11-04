@@ -1,0 +1,41 @@
+<footer class="bg-dark text-light py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5 class="brand-font text-warning">
+                    <i class="fas fa-crosshairs me-2"></i>TARKOV WIKI
+                </h5>
+                <p class="mb-3">Tu guia completa para sobrevivir en Escape from Tarkov. Informacion sobre armas, mapas, y estrategias.</p>
+                {% include 'core/includes/social_media.html' %}
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <h6 class="text-warning mb-3">Enlaces Rapidos</h6>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'core:home' %}" class="text-light text-decoration-none">Inicio</a></li>
+                    <li><a href="{% url 'core:about' %}" class="text-light text-decoration-none">Sobre el Juego</a></li>
+                    <li><a href="{% url 'weapons:weapon_list' %}" class="text-light text-decoration-none">Arsenal</a></li>
+                    <li><a href="{% url 'core:gallery' %}" class="text-light text-decoration-none">Galeria</a></li>
+                    <li><a href="{% url 'core:faq' %}" class="text-light text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <h6 class="text-warning mb-3">Informacion</h6>
+                <p class="mb-2"><i class="fas fa-gamepad me-2"></i>Juego: Escape from Tarkov</p>
+                <p class="mb-2"><i class="fas fa-building me-2"></i>Desarrollador: Battlestate Games</p>
+                <p class="mb-0"><i class="fas fa-info-circle me-2"></i>Wiki no oficial</p>
+            </div>
+        </div>
+        
+        <hr class="my-4 border-secondary">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="mb-0">2025 Tarkov Wiki. Proyecto educativo Django.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <small class="text-muted">Desarrollado con Django y Bootstrap</small>
+            </div>
+        </div>
+    </div>
+</footer>

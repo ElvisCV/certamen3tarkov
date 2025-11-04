@@ -1,0 +1,189 @@
+{% extends 'core/base.html' %}
+
+{% block title %}FAQ - Tarkov Wiki{% endblock %}
+
+{% block content %}
+<!-- Banner Section -->
+<section class="py-5 bg-warning text-dark">
+    <div class="container text-center">
+        <h1 class="brand-font display-4 mb-3">PREGUNTAS FRECUENTES</h1>
+        <p class="lead">Encuentra respuestas a las preguntas mas comunes sobre Escape from Tarkov</p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    
+                    <!-- Pregunta 1 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse1" aria-expanded="true">
+                                <i class="fas fa-gamepad me-3 text-warning"></i>
+                                Que es Escape from Tarkov?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Escape from Tarkov es un shooter tactico realista en primera persona desarrollado por Battlestate Games. Combina elementos de FPS, RPG y survival en raids donde debes sobrevivir, completar objetivos y escapar con tu botin.</p>
+                                <p class="mb-0">El juego se destaca por su realismo, sistema de armas detallado y consecuencias permanentes al morir.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 2 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse2">
+                                <i class="fas fa-skull me-3 text-warning"></i>
+                                Que pasa si muero en una raid?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Si mueres en una raid, pierdes <strong>todo el equipamiento</strong> que llevabas contigo: armas, armadura, botiquin, municion y objetos en tu mochila.</p>
+                                <p>Sin embargo, los objetos que guardes en tu escondite (stash) estan seguros. Los objetos asegurados tienen probabilidad de regresar despues de 24-36 horas si otros jugadores no los recogen.</p>
+                                <p class="mb-0">Este sistema de riesgo/recompensa es fundamental en Tarkov.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 3 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse3">
+                                <i class="fas fa-user-friends me-3 text-warning"></i>
+                                Puedo jugar con amigos?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Si, puedes formar grupos de hasta <strong>5 jugadores</strong> para entrar a raids juntos como PMCs.</p>
+                                <p>Jugar en grupo ofrece ventajas tacticas, pero tambien significa compartir el botin disponible en el mapa.</p>
+                                <p class="mb-0">Es importante comunicarse bien para evitar el fuego amigo, ya que el juego no muestra marcadores sobre tus companeros.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 4 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse4">
+                                <i class="fas fa-money-bill-wave me-3 text-warning"></i>
+                                Como funciona el sistema de economia?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>El juego tiene varias monedas: Rublos rusos (RUB), Dolares (USD) y Euros (EUR).</p>
+                                <ul>
+                                    <li><strong>Traders:</strong> NPCs que compran y venden objetos con precios fijos</li>
+                                    <li><strong>Flea Market:</strong> Mercado de jugadores donde puedes vender/comprar a precios variables</li>
+                                    <li><strong>Barter:</strong> Intercambios de objetos sin dinero</li>
+                                </ul>
+                                <p class="mb-0">La economia es dinamica y los precios fluctuan segun oferta y demanda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 5 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse5">
+                                <i class="fas fa-shield-alt me-3 text-warning"></i>
+                                Cual es la diferencia entre USEC y BEAR?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p><strong>USEC (United Security):</strong> PMC internacional de origen occidental. Hablan ingles y tienen voces en ese idioma.</p>
+                                <p><strong>BEAR (Battle Encounter Assault Regiment):</strong> PMC rusa. Hablan ruso y tienen ventajas con armas rusas al inicio.</p>
+                                <p class="mb-0">La eleccion afecta principalmente dialogos, algunas misiones exclusivas y la estetica. Ambas facciones pueden usar el mismo equipamiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 6 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse6">
+                                <i class="fas fa-medkit me-3 text-warning"></i>
+                                Como funciona el sistema de salud?
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Cada parte del cuerpo tiene su propia barra de salud:</p>
+                                <ul>
+                                    <li><strong>Cabeza y Torax:</strong> Si llegan a 0, mueres instantaneamente</li>
+                                    <li><strong>Brazos:</strong> Afectan precision y velocidad de recarga</li>
+                                    <li><strong>Piernas:</strong> Afectan velocidad de movimiento</li>
+                                    <li><strong>Estomago:</strong> Afecta energia y hidratacion</li>
+                                </ul>
+                                <p>Las heridas pueden causar sangrado, fracturas, contusiones y otros efectos negativos que requieren tratamiento especifico.</p>
+                                <p class="mb-0"><strong>Consejo:</strong> Siempre lleva botiquin y vendas a las raids.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 7 -->
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="heading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse7">
+                                <i class="fas fa-map-marked-alt me-3 text-warning"></i>
+                                Cuantos mapas hay disponibles?
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Actualmente hay varios mapas principales:</p>
+                                <ul>
+                                    <li><strong>Customs:</strong> Zona industrial, ideal para principiantes</li>
+                                    <li><strong>Woods:</strong> Bosque grande con terreno abierto</li>
+                                    <li><strong>Shoreline:</strong> Resort y playa con mucho botin</li>
+                                    <li><strong>Interchange:</strong> Centro comercial masivo</li>
+                                    <li><strong>Reserve:</strong> Base militar con bunkers subterraneos</li>
+                                    <li><strong>Factory:</strong> Mapa pequeno de combate rapido</li>
+                                    <li><strong>Labs:</strong> Instalacion secreta de alto riesgo/recompensa</li>
+                                    <li><strong>Lighthouse:</strong> Costa con faro y campamentos</li>
+                                    <li><strong>Streets of Tarkov:</strong> Ciudad urbana (mas reciente)</li>
+                                </ul>
+                                <p class="mb-0">Mas mapas estan en desarrollo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Contacto adicional -->
+                <div class="text-center mt-5">
+                    <h4 class="brand-font text-warning mb-3">Aun tienes dudas?</h4>
+                    <p>Visita el arsenal de armas o explora la galeria</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{% url 'weapons:weapon_list' %}" class="btn btn-warning">
+                            <i class="fas fa-gun me-2"></i>Ver Arsenal
+                        </a>
+                        <a href="{% url 'core:gallery' %}" class="btn btn-outline-warning">
+                            <i class="fas fa-images me-2"></i>Ver Galeria
+                        </a>
+                        <a href="{% url 'core:about' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-info-circle me-2"></i>Sobre el Juego
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

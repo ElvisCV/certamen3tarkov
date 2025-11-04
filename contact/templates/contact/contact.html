@@ -1,0 +1,112 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ page_title }} - Tarkov Wiki{% endblock %}
+
+{% block extra_css %}
+<style>
+    .contact-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        padding: 60px 0;
+    }
+    .contact-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        padding: 40px;
+    }
+    .contact-info {
+        background: var(--tarkov-light-gray);
+        border-radius: 15px;
+        padding: 30px;
+        color: white;
+    }
+    .contact-info h3 {
+        color: var(--tarkov-gold);
+        margin-bottom: 30px;
+    }
+    .contact-info-item {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+    }
+    .contact-info-item i {
+        font-size: 1.5rem;
+        color: var(--tarkov-gold);
+        margin-right: 15px;
+        width: 30px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <h1 class="brand-font display-4 text-warning mb-3">
+                        <i class="fas fa-envelope me-3"></i>CONTACTO
+                    </h1>
+                    <p class="lead text-white">¿Tienes preguntas sobre Escape from Tarkov? ¡Contáctanos!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Formulario -->
+            <div class="col-lg-8">
+                <div class="contact-card">
+                    <h2 class="brand-font text-dark mb-4">Envíanos un Mensaje</h2>
+                    {% crispy form %}
+                </div>
+            </div>
+            
+            <!-- Información de Contacto -->
+            <div class="col-lg-4">
+                <div class="contact-info">
+                    <h3 class="brand-font">Información</h3>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            <small>Tarkov, Norvinsk</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <small>contacto@tarkovwiki.com</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horario</strong><br>
+                            <small>Lun - Vie: 9:00 - 18:00</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>Comunidad</strong><br>
+                            <small>Únete a nuestro Discord</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+

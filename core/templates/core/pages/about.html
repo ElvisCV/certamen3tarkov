@@ -1,0 +1,112 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sobre el Juego - Tarkov Wiki{% endblock %}
+
+{% block content %}
+<!-- Banner Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h1 class="brand-font display-4 mb-3 text-warning">ESCAPE FROM TARKOV</h1>
+        <p class="lead">El shooter tactico mas realista y desafiante</p>
+    </div>
+</section>
+
+<!-- Historia del Juego -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2025/08/escape-tarkov-4355744.jpg?tf=3840x" 
+                     class="img-fluid rounded shadow" alt="Escape from Tarkov">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="brand-font text-warning mb-4">Que es Escape from Tarkov?</h2>
+                <p class="mb-3">Escape from Tarkov es un juego de accion RPG/simulador con algunos elementos MMO desarrollado por Battlestate Games. Se centra en escenarios realistas de combate en primera persona en una zona ficticia de la ciudad rusa de Tarkov.</p>
+                <p class="mb-3">Los jugadores asumen el papel de un PMC (Private Military Company) o un Scav (Scavenger) y deben sobrevivir, completar misiones y escapar con el botin.</p>
+                <p><strong>El juego combina elementos de shooters tacticos, survival horror y RPG en una experiencia unica e intensa.</strong></p>
+            </div>
+        </div>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/12/escape-tarkov-2914894.jpg?tf=3840x" 
+                     class="img-fluid rounded shadow" alt="Gameplay">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <h2 class="brand-font text-warning mb-4">Gameplay y Mecanicas</h2>
+                <p class="mb-3">El juego presenta un sistema de balistica realista, donde cada bala es simulada con precision. Las armas pueden ser modificadas con cientos de accesorios reales.</p>
+                <p class="mb-3">La gestion del inventario es crucial: debes elegir cuidadosamente que llevar en cada raid, ya que si mueres, pierdes todo tu equipamiento.</p>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-trophy fs-3 text-warning me-3"></i>
+                    <span><strong>Sistema de progresion profundo con skills, misiones y reputacion con traders</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facciones -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="brand-font text-center text-warning mb-5">FACCIONES PRINCIPALES</h2>
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <i class="fas fa-user-secret fs-1 text-primary mb-3"></i>
+                <h4 class="brand-font">USEC</h4>
+                <p>Compania militar privada internacional que protegía las instalaciones de TerraGroup</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <i class="fas fa-user-shield fs-1 text-danger mb-3"></i>
+                <h4 class="brand-font">BEAR</h4>
+                <p>Operadores especiales rusos enviados a investigar actividades ilegales de TerraGroup</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <i class="fas fa-skull fs-1 text-secondary mb-3"></i>
+                <h4 class="brand-font">SCAV</h4>
+                <p>Salvajes locales que saquean la ciudad en busca de suministros y supervivencia</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Caracteristicas Clave -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="brand-font text-center text-warning mb-5">CARACTERISTICAS CLAVE</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font"><i class="fas fa-heartbeat me-2 text-danger"></i>Sistema de Salud Realista</h5>
+                        <p class="card-text">Cada parte del cuerpo tiene su propia salud. Las heridas afectan tu movilidad y precision.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font"><i class="fas fa-coins me-2 text-warning"></i>Economia de Mercado</h5>
+                        <p class="card-text">Vende, compra e intercambia objetos con otros jugadores en un mercado de pulgas dinamico.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font"><i class="fas fa-shield-alt me-2 text-primary"></i>Sistema de Armadura</h5>
+                        <p class="card-text">Diferentes niveles de armadura protegen contra distintos tipos de municion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font"><i class="fas fa-warehouse me-2 text-success"></i>Hideout</h5>
+                        <p class="card-text">Mejora tu escondite para fabricar objetos, curar heridas y generar recursos pasivamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

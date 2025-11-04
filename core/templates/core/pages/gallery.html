@@ -1,0 +1,172 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Galeria - Tarkov Wiki{% endblock %}
+
+{% block content %}
+<!-- Banner Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h1 class="brand-font display-4 mb-3 text-warning">GALERIA</h1>
+        <p class="lead">Imagenes y capturas de pantalla de Escape from Tarkov</p>
+    </div>
+</section>
+
+<!-- Filtros -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="text-center">
+            <button class="btn btn-warning me-2 mb-2 filter-btn active" data-filter="all">Todas</button>
+            <button class="btn btn-outline-warning me-2 mb-2 filter-btn" data-filter="weapons">Armas</button>
+            <button class="btn btn-outline-warning me-2 mb-2 filter-btn" data-filter="maps">Mapas</button>
+            <button class="btn btn-outline-warning me-2 mb-2 filter-btn" data-filter="gear">Equipamiento</button>
+            <button class="btn btn-outline-warning me-2 mb-2 filter-btn" data-filter="raids">Raids</button>
+        </div>
+    </div>
+</section>
+
+<!-- Galeria de Imagenes -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4" id="gallery">
+            <!-- Armas -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="weapons">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://www.exitlag.com/blog/wp-content/uploads/2024/09/escape-from-tarkov-weapons.webp" 
+                         class="card-img-top"  alt="Rifle de Asalto">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Rifles de Asalto</h5>
+                        <p class="card-text">Arsenal completo de rifles de asalto personalizables</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="weapons">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://forum.escapefromtarkov.com/uploads/monthly_2017_12/IMG_20171108_055135.jpg.2217860e4171274c7235ecb689fbd698.jpg.afca238b6bdb586a58fe0e53ca635c44.jpg" 
+                         class="card-img-top"  alt="Pistola">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Pistolas</h5>
+                        <p class="card-text">Armas secundarias para combate cercano</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="weapons">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.redd.it/new-sniper-rifle-images-from-efts-twitter-v0-p388qzu4kiyd1.jpg?width=3840&format=pjpg&auto=webp&s=6b118122ed03e3d3ac32fddaf3b2c6b85a9c0250" 
+                         class="card-img-top"  alt="Rifle de Francotirador">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Rifles de Francotirador</h5>
+                        <p class="card-text">Precision a larga distancia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapas -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="maps">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.redd.it/zmanfyd558841.png" 
+                         class="card-img-top"  alt="Mapa Customs">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Customs</h5>
+                        <p class="card-text">Zona industrial con multiplesrutas de extraccion</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="maps">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://tarkov.dev/maps/woods-3d.jpg" 
+                         class="card-img-top"  alt="Mapa Woods">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Woods</h5>
+                        <p class="card-text">Bosque denso con terreno variable</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Equipamiento -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="gear">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2021/01/Escape-from-Tarkov-Armor-Guide_Feature-Image-e1612818155589.jpg" 
+                         class="card-img-top"  alt="Armadura">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Armaduras</h5>
+                        <p class="card-text">Proteccion balistica de diferentes niveles</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="gear">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://m.media-amazon.com/images/I/81A2VDWVC+L._UY1000_.jpg" 
+                         class="card-img-top"  alt="Cascos">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Cascos</h5>
+                        <p class="card-text">Proteccion para la cabeza con visores opcionales</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Raids -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="raids">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.ytimg.com/vi/UPnrY5BxddI/maxresdefault.jpg" 
+                         class="card-img-top"  alt="Raid Exitoso">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Raid Exitoso</h5>
+                        <p class="card-text">Extraccion exitosa con botin valioso</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="raids">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.ytimg.com/vi/2NXNm2TIuOA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCuxK6rStmNv1N4ptR7sXrwb_cXKw" 
+                         class="card-img-top"  alt="Combate">
+                    <div class="card-body">
+                        <h5 class="card-title brand-font">Combate PvP</h5>
+                        <p class="card-text">Enfrentamientos intensos entre PMCs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remover clase active de todos los botones
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('btn-warning');
+                btn.classList.add('btn-outline-warning');
+            });
+            
+            // Agregar clase active al boton clickeado
+            this.classList.add('active');
+            this.classList.add('btn-warning');
+            this.classList.remove('btn-outline-warning');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}
