@@ -10,16 +10,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Weapon)
 class WeaponAdmin(admin.ModelAdmin):
-    # Al menos 5 parámetros personalizados:
-    # 1. list_display personalizado
     list_display = ('name', 'category', 'caliber', 'is_available', 'created', 'updated', 'modification_count')
-    # 2. list_filter personalizado
     list_filter = ('category', 'is_available', 'caliber', 'created', 'updated')
-    # 3. search_fields personalizado
     search_fields = ('name', 'description', 'caliber', 'category__name')
-    # 4. readonly_fields personalizado
     readonly_fields = ('created', 'updated', 'modification_count_display')
-    # 5. fieldsets personalizado con organización
     fieldsets = (
         ('Información del Arma', {
             'fields': ('name', 'description', 'img', 'category')
@@ -36,13 +30,9 @@ class WeaponAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
-    # 6. list_editable para edición rápida
     list_editable = ('is_available',)
-    # 7. date_hierarchy para navegación por fechas
     date_hierarchy = 'created'
-    # 8. ordering personalizado
     ordering = ('-created',)
-    # 9. list_per_page para paginación
     list_per_page = 25
     
     def modification_count(self, obj):

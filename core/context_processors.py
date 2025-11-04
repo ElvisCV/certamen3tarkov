@@ -17,6 +17,3 @@ def tarkov_stats(request):
         'tarkov_stats': stats
     }
 
-
-
-

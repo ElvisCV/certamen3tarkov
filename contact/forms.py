@@ -53,6 +53,3 @@ class ContactForm(forms.Form):
             HTML('<br><small class="text-muted">* Este formulario es una demostración. No envía correos en esta versión.</small>')
         )
 
-
-
-

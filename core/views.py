@@ -16,7 +16,3 @@ class FAQView(TemplateView):
 def custom_404(request, exception):
     """Vista personalizada para errores 404"""
     return render(request, '404.html', status=404)
-
-def test_404(request):
-    """Vista de prueba para ver el diseño del error 404"""
-    return render(request, '404.html', status=404)

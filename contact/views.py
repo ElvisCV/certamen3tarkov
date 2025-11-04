@@ -9,7 +9,6 @@ class ContactView(FormView):
     success_url = reverse_lazy('contact:contact')
     
     def form_valid(self, form):
-        # El formulario no necesita ser funcional según los requisitos
         messages.success(self.request, '¡Gracias por tu mensaje! Te responderemos pronto.')
         return super().form_valid(form)
     
@@ -17,7 +16,3 @@ class ContactView(FormView):
         context = super().get_context_data(**kwargs)
         context['page_title'] = 'Contacto - Tarkov Wiki'
         return context
-
-
-
-
